@@ -1,27 +1,27 @@
-function normalizeCardsHeight() {
-  const cards = document.querySelectorAll('.card');
-  let maxHeight = 0;
-
-  // Сброс высоты
-  cards.forEach(card => card.style.height = 'auto');
-
-  // Находим максимальную высоту
-  cards.forEach(card => {
-    maxHeight = Math.max(maxHeight, card.offsetHeight);
-  });
-
-  // Устанавливаем единую высоту
-  cards.forEach(card => {
-    card.style.height = `${maxHeight}px`;
-  });
-}
-
-// Вызов функций
-window.addEventListener('load', normalizeCardsHeight);
-window.addEventListener('resize', normalizeCardsHeight);
-
 document.addEventListener('DOMContentLoaded', function () {
-  const swiper = new Swiper('.swiper-container', {
+  const swiperCustom = new Swiper('.swiper-main', {
+    createElements: true,
+    slidesPerView: 1,
+    spaceBetween: 100,
+    speed: 1000, 
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-main-next',
+      prevEl: '.swiper-main-prev',
+    },
+    pagination: {
+      el: ".swiper-main-pagination",
+      type: 'bullets',
+      clickable: true,
+    }
+  });
+
+  const swiper = new Swiper('.swiper-custom', {
     slidesPerView: 1,
     spaceBetween: -1,
     freeMode: false,       // Отключаем свободное перетаскивание
@@ -30,16 +30,26 @@ document.addEventListener('DOMContentLoaded', function () {
     watchSlidesProgress: true,
     touchReleaseOnEdges: true, // Резкое завершение свайпа на границах
     speed: 400,
+    slidesPerView: 'auto',
     freeMode: false,
     // followFinger: false,   // Не следует за пальцем при свайпе
     touchRatio: 1.2,       // Чувствительность свайпа
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-custom-next',
+      prevEl: '.swiper-custom-prev',
     },
     breakpoints: {
-      1024: {
+      475: {
         slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 4,
+      },
+      1920: {
+        slidesPerView: 5,
       }
     },
     on: {
@@ -54,28 +64,4 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
-
-  function updateCardsOpacity(swiperInstance) {
-    const slides = swiperInstance.slides;
-    const isDesktop = window.innerWidth >= 1024;
-
-    // Сначала всем карточкам устанавливаем прозрачность
-    document.querySelectorAll('.news-card').forEach(card => {
-      card.classList.remove('active');
-      card.style.opacity = '0.2';
-    });
-
-    // Активная карточка
-    slides[swiperInstance.activeIndex].querySelector('.news-card').classList.add('active');
-    slides[swiperInstance.activeIndex].querySelector('.news-card').style.opacity = '1';
-
-    // В десктопном режиме активируем и следующую карточку
-    if (isDesktop) {
-      const nextSlideIndex = swiperInstance.activeIndex + 1;
-      if (nextSlideIndex < slides.length) {
-        slides[nextSlideIndex].querySelector('.news-card').classList.add('active');
-        slides[nextSlideIndex].querySelector('.news-card').style.opacity = '1';
-      }
-    }
-  }
 });
