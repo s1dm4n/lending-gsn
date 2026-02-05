@@ -40,11 +40,11 @@ button {
 // Типография
 
 .font-large {
-  @include mixin.text-style(clamp(2.25rem, 5vw + 1rem, 7.5rem), 124%, 700);
+  @include mixin.text-style(clamp(2.25rem, 1.6793rem + 2.4348vw, 4.875rem), 112%, 700);
 }
 
 .font-medium {
-  @include mixin.text-style(clamp(2rem, 3vw + 1rem, 4.5rem), 112%, 700);
+  @include mixin.text-style(clamp(1.75rem, 1.2609rem + 2.087vw, 4rem), 112%, 500);
 }
 
 .font-title {
@@ -455,6 +455,9 @@ p {
 
 // Блок hero
 .hero {
+  background-color: #153453;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzOC40NCAzOC40NCI+PHJlY3Qgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0id2hpdGUiIGZpbGwtb3BhY2l0eT0iMC4wNiIvPjwvc3ZnPg==");
+  background-size: 38.44px 38.44px;
   scroll-margin-top: 128px;
   transform: translateY(0) !important;
 
@@ -1183,7 +1186,7 @@ p {
   filter: grayscale(0) !important;
 }
 
-&-main &-slide > .card, &-main &-slide-prev > .card{
+&-main &-slide > .card, &-main &-slide-prev > .card {
   opacity: 0.2;
   filter: grayscale(0.8);
   @include mixin.transition(opacity, 0.6s);
@@ -1210,6 +1213,7 @@ p {
     .card {
       border: 1px solid var.$color-line;
       background: var.$color-content-block-bg;
+      @include mixin.transition(opacity, 0.3s);
     }
 
     .integration-card {

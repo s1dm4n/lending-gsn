@@ -28,15 +28,14 @@ slides:
   - alt: "Форма «Аналитика»"
 ---
 
-<section class="hero grid gutter gb fade-in" id="hero" data-fade-group>
-  <div class="hero__content cols-8">
+<section class="hero grid gb fade-in" id="hero" data-fade-group>
+  <div class="hero__content">
     <h1 class="hero__title">
-      <span class="hero__title-line font-large" aria-hidden="true">Цифровые решения</span>
-      <span class="hero__title-line font-title" aria-hidden="true">для реальной стройки</span>
-      <span class="visually-hidden">Цифровые решения для реальной стройки</span>
+      <span class="hero__title-line font-large" aria-hidden="true">Государственный</span>
+      <span class="hero__title-line font-medium" aria-hidden="true">строительный надзор</span>
     </h1>
   </div>
-  <div class="hero__image cols-8">
+  <div class="hero__image">
     <picture>
       <source
         media="(min-width: 582px) and (max-width: 1024px)"
@@ -54,13 +53,6 @@ slides:
         alt="Бизнесмен анализирует график роста на планшете с помощью цифровой экосистемы ЭТОС для строительства"
         loading="lazy"/>
     </picture>
-  </div>
-  <div aria-hidden="true" class="lines grid" style="z-index: -2">
-    <div class="cols-4 line"></div>
-    <div class="cols-4 line"></div>
-    <div class="cols-4 line"></div>
-    <div class="cols-4 line"></div>
-    <div class="cols-4 line"></div>
   </div>
 </section>
 <section class="functions standart-block grid gutter gt main-title-gap" id="functions" data-fade-group>
@@ -208,7 +200,7 @@ slides:
     <div class="cols-4 line"></div>
   </div>
 </section>
-<section class="swiper-main gutter gt fade-in" id="swiper">
+<section class="swiper-main gutter gt fade-in">
   <div class="swiper-wrapper">
     {% for slide in slides %}
       {% if loop.index < 10 %}

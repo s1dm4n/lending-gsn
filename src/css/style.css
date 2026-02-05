@@ -335,8 +335,8 @@ button {
 
 .font-large {
   font-family: "Manrope", sans-serif;
-  font-size: clamp(2.25rem, 5vw + 1rem, 7.5rem);
-  line-height: 124%;
+  font-size: clamp(2.25rem, 1.6793rem + 2.4348vw, 4.875rem);
+  line-height: 112%;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
@@ -344,9 +344,9 @@ button {
 
 .font-medium {
   font-family: "Manrope", sans-serif;
-  font-size: clamp(2rem, 3vw + 1rem, 4.5rem);
+  font-size: clamp(1.75rem, 1.2609rem + 2.087vw, 4rem);
   line-height: 112%;
-  font-weight: 700;
+  font-weight: 500;
   color: #ffffff;
   margin: 0;
 }
@@ -729,6 +729,9 @@ p {
 }
 
 .hero {
+  background-color: #153453;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzOC40NCAzOC40NCI+PHJlY3Qgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0id2hpdGUiIGZpbGwtb3BhY2l0eT0iMC4wNiIvPjwvc3ZnPg==");
+  background-size: 38.44px 38.44px;
   scroll-margin-top: 128px;
   transform: translateY(0) !important;
 }
@@ -1324,6 +1327,7 @@ p {
 .swiper-slide .card {
   border: 1px solid rgba(190, 194, 198, 0.5019607843);
   background: #E4E4E4;
+  transition: opacity 0.3s ease;
 }
 .swiper-slide .integration-card {
   display: flex;
