@@ -58,20 +58,40 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Находим все элементы с классом .adaptive-text
-document.addEventListener('DOMContentLoaded', updateTexts);
-const elements = document.querySelectorAll('.adapt-btn');
-
-function updateTexts() {
-  elements.forEach(el => {
-    const span = el.querySelector('span');
-    if (!span) return;
-
-    span.textContent = window.innerWidth <= 345
-      ? el.dataset.mobile || 'Узнать больше'
-      : el.dataset.desktop || 'Рассчитать стоимость';
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = document.querySelectorAll('.adapt-btn');
+  
+  // Сохраняем оригинальные тексты
+  elements.forEach(element => {
+    const span = element.querySelector('span');
+    if (span) {
+      element.dataset.originalText = span.textContent;
+    }
   });
-}
+  
+  function updateTexts() {
+    const isMobile = window.innerWidth <= 345;
+    
+    elements.forEach(element => {
+      const span = element.querySelector('span');
+      if (!span) return;
+      
+      if (isMobile) {
+        // На мобильных показываем короткий текст
+        span.textContent = element.dataset.shortText || 'Кнопка';
+      } else {
+        // На десктопах показываем оригинальный текст
+        span.textContent = element.dataset.originalText || 'Оригинал';
+      }
+    });
+  }
+  
+  // Вызываем сразу
+  updateTexts();
+  
+  // И при изменении размера окна
+  window.addEventListener('resize', updateTexts);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const fadeElements = document.querySelectorAll('.fade-in');

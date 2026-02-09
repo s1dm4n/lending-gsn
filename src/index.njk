@@ -4,27 +4,26 @@ title: Система строительного надзора
 description: "Комплексная цифровизация органов государственного строительного надзора с гибкой настройкой под заказчика"
 integrations:
   - name: "ФГИС ПГС"
-    icon: "/img/mincifry.svg"
+    icon: "mincifry"
   - name: "ФГИС ЕРКНМ"
-    icon: "/img/genprocuratura.svg"
+    icon: "genprocuratura"
   - name: "ГИС ЕГРЗ"
-    icon: "/img/glavexpertiza.svg"
+    icon: "glavexpertiza"
   - name: "ЕГРЮЛ"
-    icon: "/img/fns.svg"
+    icon: "fns"
   - name: "СМЭВ"
-    icon: "/img/gosuslugi.svg"
+    icon: "gosuslugi"
   - name: "ГИС ОГД"
-    icon: "/img/gis-ogd.svg"
+    icon: "gis-ogd"
   - name: "ФЦОД ФНС"
-    icon: "/img/fns.svg"
+    icon: "fns"
   - name: "ИСУП"
-    icon: "/img/minstroy.svg"
+    icon: "minstroy"
   - name: "ЕССК"
-    icon: "/img/essk.svg"
+    icon: "essk"
 slides:
   - alt: "Форма авторизации"
   - alt: "Форма «Объект»"
-  - alt: "Форма «Запись на прием»"
   - alt: "Форма «Аналитика»"
 ---
 
@@ -200,8 +199,8 @@ slides:
         </div>
       </div>
       <div class="standart-block__buttons">
-        <a class="standart-block__button button adapt-btn" type="button" href="/#contacts">
-          <span class="button__text">Рассчитать стоимость</span>
+        <a class="standart-block__button button adapt-btn" data-short-text="Узнать больше" type="button" href="/#contacts">
+          <span class="button__text">Заказать презентацию</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 25 26" fill="none">
             <path d="M22 4L3 23" stroke-width="3" stroke-linecap="square"/>
             <path d="M23 23V3H3" stroke-width="3" stroke-linecap="square"/>
@@ -360,9 +359,7 @@ slides:
       <div class="swiper-slide">
         <div class="card">
           <article class="integration-card">
-            <svg class="integration-icon" xmlns="http://www.w3.org/2000/svg" width="102" height="102" viewBox="0 0 102 102">
-              <use xlink:href="{{ integration.icon }}"></use>
-            </svg>
+            {% include "icons/" + integration.icon + ".svg" %}
             <span class="integration-title font-title">{{ integration.name }}</span>
           </article>
         </div>
@@ -393,11 +390,11 @@ slides:
           </p>
         </div>
         <div class="standart-block__buttons">
-          <a class="standart-block__button button adapt-btn" type="button" href="/#contacts">
+          <a class="standart-block__button button adapt-btn" type="button" data-short-text="Узнать стоимость" href="/#contacts">
             <span class="button__text">Рассчитать стоимость</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 25 26" fill="none">
-              <path d="M22 4L3 23" stroke="#4C0000" stroke-width="3" stroke-linecap="square"/>
-              <path d="M23 23V3H3" stroke="#4C0000" stroke-width="3" stroke-linecap="square"/>
+              <path d="M22 4L3 23"stroke-width="3" stroke-linecap="square"/>
+              <path d="M23 23V3H3" stroke-width="3" stroke-linecap="square"/>
             </svg>
           </a>
         </div>
@@ -438,11 +435,11 @@ slides:
             </p>
           </div>
           <div class="standart-block__buttons">
-            <a class="standart-block__button button button-2" type="button" href="sert/certificate and licence.pdf" target="_blank">
+            <a class="standart-block__button button button-2 adapt-btn" data-short-text="Сертификаты" type="button" href="sert/certificate_and_licence.pdf" target="_blank">
               <span class="button__text">Изучить сертификаты</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 25 26" fill="none">
-                <path d="M22 4L3 23" stroke="#4C0000" stroke-width="3" stroke-linecap="square"/>
-                <path d="M23 23V3H3" stroke="#4C0000" stroke-width="3" stroke-linecap="square"/>
+                <path d="M22 4L3 23" stroke-width="3" stroke-linecap="square"/>
+                <path d="M23 23V3H3" stroke-width="3" stroke-linecap="square"/>
               </svg>
             </a>
           </div>

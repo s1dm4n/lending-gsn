@@ -1424,7 +1424,7 @@ p {
 .swiper-slide .integration-card .integration-title {
   font-size: clamp(1rem, 0.7152rem + 0.9592vw, 2.25rem);
 }
-.swiper-slide .integration-card .integration-icon {
+.swiper-slide .integration-card svg {
   width: clamp(4rem, 3.4589rem + 1.8225vw, 6.375rem);
 }
 .swiper-header, .swiper-nav {

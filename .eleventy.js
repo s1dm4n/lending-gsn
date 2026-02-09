@@ -2,6 +2,12 @@ const { DateTime } = require("luxon");
 const slugify = require("@sindresorhus/slugify").default;
 
 module.exports = function(eleventyConfig) {
+
+  eleventyConfig.addFilter("justYear", (dateString) => {
+    dateObj = new Date(dateString);
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy');
+  });
+
   // Копирование статики
   eleventyConfig.addPassthroughCopy({
     "src/css/style.css": "css/style.css",
