@@ -1497,13 +1497,3 @@ p {
     }
   }
 }
-
-.price {
-  @media (max-width: 1236px) {
-    grid-template-columns: repeat(8, 1fr);
-
-    .standart-block__content {
-      order: 1 !important;
-    }
-  }
-}
